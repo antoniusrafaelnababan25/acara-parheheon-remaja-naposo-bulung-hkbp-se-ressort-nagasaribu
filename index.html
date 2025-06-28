@@ -4,154 +4,377 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pesta Parheheon Remaja & Naposobulung HKBP Ressort Nagasaribu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
+        :root {
+            --primary-color: #1a4b8c;
+            --secondary-color: #2a75bb;
+            --accent-color: #4a90e2;
+            --light-color: #e6f2ff;
+            --dark-color: #0d2b4e;
+            --gold-color: #d4af37;
+        }
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.8;
             margin: 0;
             padding: 0;
-            background-color: #f9f3fc;
+            background: linear-gradient(135deg, #f5f9ff 0%, #e6f0ff 100%);
             color: #333;
+            background-attachment: fixed;
         }
+        
         .container {
-            max-width: 900px;
-            margin: 20px auto;
+            max-width: 1000px;
+            margin: 30px auto;
             background-color: white;
-            padding: 30px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
         }
+        
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+        }
+        
         h1, h2, h3 {
-            color: #5e2d8b;
-            text-align: center;
-            font-weight: 600;
+            color: var(--primary-color);
+            font-weight: 700;
         }
+        
         h1 {
-            color: #5e2d8b;
-            border-bottom: 3px solid #8e44ad;
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--gold-color);
             padding-bottom: 15px;
-            margin-bottom: 25px;
-            font-size: 28px;
+            margin-bottom: 30px;
+            font-size: 32px;
+            text-align: center;
+            position: relative;
+            animation: fadeInDown 1s;
         }
+        
+        h1::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: var(--gold-color);
+            margin: 10px auto 0;
+        }
+        
         h2 {
-            background-color: #f0e6f6;
-            padding: 12px;
+            background: linear-gradient(90deg, rgba(26,75,140,0.1) 0%, rgba(42,117,187,0.1) 100%);
+            padding: 15px;
             border-radius: 8px;
-            margin-top: 40px;
-            font-size: 22px;
+            margin-top: 50px;
+            font-size: 24px;
+            border-left: 5px solid var(--secondary-color);
+            animation: fadeInLeft 0.8s;
         }
+        
         h3 {
-            text-align: left;
-            color: #2980b9;
-            border-left: 4px solid #2980b9;
-            padding-left: 10px;
-            margin-top: 25px;
-            font-size: 18px;
+            color: var(--secondary-color);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 15px;
+            margin-top: 30px;
+            font-size: 20px;
+            animation: fadeIn 1s;
         }
+        
         .header-info {
             text-align: center;
-            margin-bottom: 30px;
-            font-size: 16px;
+            margin-bottom: 40px;
+            font-size: 18px;
             color: #555;
+            animation: fadeIn 1.2s;
         }
+        
         .theme-box {
-            background-color: #f8f0ff;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 5px solid #8e44ad;
-            margin: 25px 0;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            background: linear-gradient(135deg, rgba(74,144,226,0.1) 0%, rgba(26,75,140,0.1) 100%);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid var(--primary-color);
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s;
         }
+        
+        .theme-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%231a4b8c" opacity="0.05"><path d="M30,30 Q50,10 70,30 T90,50 Q70,70 50,90 T10,50 Q30,30 50,10 T90,30"></path></svg>') no-repeat;
+            background-size: contain;
+        }
+        
         .theme-box p {
-            margin: 8px 0;
-            font-size: 15px;
+            margin: 10px 0;
+            font-size: 16px;
+            position: relative;
+            z-index: 1;
         }
+        
+        .theme-box strong {
+            color: var(--primary-color);
+        }
+        
         .worship-item {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            animation: fadeIn 1s;
         }
+        
         .leader {
             font-weight: 600;
-            color: #2980b9;
+            color: var(--secondary-color);
             display: block;
-            margin-top: 15px;
+            margin-top: 20px;
         }
+        
         .congregation {
             font-style: italic;
-            color: #27ae60;
+            color: var(--primary-color);
             display: block;
-            margin-left: 20px;
-            margin-bottom: 15px;
+            margin-left: 25px;
+            margin-bottom: 20px;
         }
+        
         .song {
-            background-color: #e8f4f8;
-            padding: 15px;
-            border-radius: 6px;
-            border-left: 4px solid #3498db;
-            margin: 15px 0;
-            font-size: 15px;
+            background: linear-gradient(135deg, rgba(234,244,255,0.8) 0%, rgba(214,232,255,0.8) 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+            margin: 20px 0;
+            font-size: 16px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.8s;
         }
+        
+        .song:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+        
         .song-title {
             font-weight: bold;
-            margin-bottom: 10px;
-            color: #2c3e50;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+            font-size: 17px;
+            display: flex;
+            align-items: center;
         }
+        
+        .song-title::before {
+            content: "♫";
+            margin-right: 10px;
+            color: var(--gold-color);
+        }
+        
         ul, ol {
-            padding-left: 25px;
+            padding-left: 30px;
         }
+        
         li {
-            margin-bottom: 8px;
+            margin-bottom: 12px;
+            position: relative;
         }
+        
+        ul li::before {
+            content: "";
+            position: absolute;
+            left: -20px;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+        }
+        
+        ol {
+            counter-reset: item;
+        }
+        
+        ol li {
+            counter-increment: item;
+        }
+        
+        ol li::before {
+            content: counter(item) ".";
+            position: absolute;
+            left: -25px;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+        
         .footer {
             text-align: center;
-            margin-top: 50px;
-            padding-top: 20px;
+            margin-top: 60px;
+            padding-top: 30px;
             border-top: 2px solid #eee;
             font-weight: bold;
-            color: #5e2d8b;
-            font-size: 18px;
+            color: var(--primary-color);
+            font-size: 20px;
+            position: relative;
+            animation: fadeIn 1.2s;
         }
+        
+        .footer::before {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            margin: 0 auto 20px;
+        }
+        
         .bible-verse {
             font-style: italic;
-            background-color: #fff9e6;
-            padding: 12px;
-            border-left: 4px solid #f1c40f;
-            margin: 15px 0;
+            background: linear-gradient(135deg, rgba(255,249,230,0.8) 0%, rgba(255,243,207,0.8) 100%);
+            padding: 20px;
+            border-left: 4px solid var(--gold-color);
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            animation: fadeInUp 0.8s;
         }
+        
         .prayer {
-            background-color: #f5f5f5;
-            padding: 15px;
-            border-radius: 6px;
-            margin: 15px 0;
-            font-size: 15px;
+            background: linear-gradient(135deg, rgba(245,245,245,0.9) 0%, rgba(235,235,235,0.9) 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 16px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid rgba(26,75,140,0.3);
+            animation: fadeInUp 0.8s;
         }
+        
         .responsive-table {
             width: 100%;
             overflow-x: auto;
         }
+        
+        .section {
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .section::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, var(--accent-color) 50%, transparent 100%);
+        }
+        
+        .floating-decoration {
+            position: absolute;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .decoration-1 {
+            top: 50px;
+            right: 50px;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .decoration-2 {
+            bottom: 100px;
+            left: 50px;
+            width: 150px;
+            height: 150px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%231a4b8c"><path d="M50,0 L100,50 L50,100 L0,50 Z"></path></svg>') no-repeat;
+            background-size: contain;
+            animation: float 8s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
         @media (max-width: 768px) {
             .container {
-                padding: 15px;
-                margin: 10px;
+                padding: 20px;
+                margin: 15px;
             }
+            
             h1 {
-                font-size: 24px;
+                font-size: 26px;
             }
+            
             h2 {
-                font-size: 20px;
+                font-size: 22px;
             }
+            
+            .decoration-1, .decoration-2 {
+                display: none;
+            }
+        }
+        
+        /* Animated underline for links */
+        a {
+            position: relative;
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        
+        a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary-color);
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        
+        a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
+        <div class="floating-decoration decoration-1"></div>
+        <div class="floating-decoration decoration-2"></div>
+        
+        <header class="animate__animated animate__fadeIn">
             <h1>PESTA PARHEHEON REMAJA & NAPOSOBULUNG</h1>
             <div class="header-info">
                 <h2>HKBP SION KOTA - RESSORT NAGASARIBU</h2>
                 <h3>Minggu, 29 Juni 2025</h3>
             </div>
             
-            <div class="theme-box">
+            <div class="theme-box animate__animated animate__fadeInUp">
                 <p><strong>TEMA:</strong> MARSITANGIANGAN, MARSIURUPAN, MARSIHAPOSAN</p>
                 <p><strong>SUB TEMA:</strong> REMAJA NAPOSOBULUNG HKBP SA RESSORT NAGASARIBU GABE GENERASI PENERUS NA BURJU MARTANGIANG, BURJU MANGURUPI, DOHOT GABE NAPOSO HAPOSAN.</p>
             </div>
@@ -317,49 +540,4 @@
             
             <div class="song">
                 <div class="song-title">17. Marende BE.No. 729 : 1 - "Laho Ma Hamu" (P. Pelean IA, IB, II) BL.729</div>
-                <p>• Laho ma hamu tu liat portibi on, Ninna Jesus Kristus Tuhan i. Ninna Jesus Kristus Tuhan i. Baritahon ma Barita na uli I, Tu saluhut na tinompa I, Tu saluhut na tinompa i. Asa marlas ni roha ma, Langit nang dohot hajanghajang I, Marolopolop angka ladang I, Rodi hau na di harangan i. Martopaptopap sunge I, Marhasakhasak tao nang laut I, Marolopolop ma portibi on, Nang sudena pangisinai</p>
-                <p style="text-align: center; font-style: italic;">…..………. organ/musik ……………</p>
-                <p>• Lam margogo ma angka parjamita I, Mangulahon tohonanna I, Mangulahon tohonanna i. Lao mampargogoi angka na porsea I, Di sudena partingkian I, Na hatop sai mubauba i. On do barita na uli, Pangurupion tu na pogos I, Malua angka na tarrante I, Apulapul tu na dangol i. Pajongjong hatigoran I,Pamalum na so boi marnida I, Patindang nasa hasintongan I, Pasaorhon hadameon I AMEN</p>
-                <p style="text-align: center; font-style: italic;">"Setelah Persembahan Dikumpulkan, di iringi tarian Persembahan sian RENA HKBP Nagasaribu"</p>
-            </div>
-            
-            <div class="worship-item">
-                <h3>18. PARSURUON TU NGOLU SIGANUP ARI</h3>
-                <span class="leader">U:</span> Huria ni Tuhanta na marlas ni roha sadari on, nunga tabege hata ni Tuhanta. Antong borhat ma hita mangulahon angka tona ni Jahowa, ai diparbaga Ibana asa gabe pasupasu hita ala hita angka hasahatan ni pasupasuNa.
-                <span class="congregation">U+H:</span> (Mangendehon BE. 519 : 4 "Tarbege do panjou") BL. 356
-                <div class="song">
-                    <p>• Ulahon ma manghatindangkon Kristus nampuna hita on, Asa torop dope barani marsomba tu Rajanta on. Hita sude, naeng marade Nang dilele, da, Haposan ma di Debata.</p>
-                </div>
-                <span class="congregation">H:</span> Olo Tuhan, borhat ma hami angka na marhahamaranggi laho patupahon ulaon asi ni roha dohot holong ni roha i tu na humaliang hami.
-                <span class="leader">U:</span> Borhat ma hamu mamaritahon barita nauli on i ma Debata na gok pasupasu, hangoluan sahat ro di salelenglelengna. Marhite pestanta sadari on jumpang hita ma na hinirim ni Huria na sa-Ressort Nagasaribu on, nang hita saluhut na pungu dison marhite parsaoranta dohot Ibana na gok haholongon.
-                <span class="congregation">H:</span> Dison do hami Tuhan, paborhat ma hami mangula tu ulaon siganup ari, asa dohot hami mamaritahon barita nauli i.
-            </div>
-            
-            <div class="worship-item">
-                <h3>19. Tangiang Pelean/Ale Amanami/Pasupasu, Amen. Amen. Amen.</h3>
-                <div class="prayer">
-                    [Doa penutup dan berkat]
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>III. ACARA UMUM</h2>
-            <ol>
-                <li><strong>Penanaman Pohon</strong> - Simbol pertumbuhan iman dan kelestarian lingkungan</li>
-                <li><strong>Kata Sambutan</strong> - Dari ketua panitia dan perwakilan gereja</li>
-                <li><strong>Lelang</strong> - Penggalangan dana untuk kegiatan remaja</li>
-                <li><strong>Makan Bersama</strong> - Persekutuan antar jemaat</li>
-                <li><strong>Persembahan Tarian, Lagu</strong> - Kreasi seni dari remaja dan naposobulung</li>
-                <li><strong>Penyampaian Piagam Kejuaraan dan Piala Juara</strong> - Penghargaan untuk berbagai lomba yang telah dilaksanakan</li>
-            </ol>
-        </section>
-
-        <div class="footer">
-            <p>"Selamat Pesta Parheheon Remaja & Naposobulung"</p>
-            <p>HKBP Sa-Ressort Nagasaribu</p>
-            <p>Tuhan memberkati ! ! !</p>
-        </div>
-    </div>
-</body>
-</html>
+                <p>• Laho ma hamu tu liat portibi on, Ninna Jesus Kristus Tuhan i. Ninna Jesus Kristus Tuhan i. Baritahon ma Barita na uli I, Tu saluhut na tinompa I, Tu saluhut na tinompa i. Asa marlas ni roha
